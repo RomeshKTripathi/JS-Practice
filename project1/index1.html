@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click Me</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            function createParagraph(){
+                const para = document.createElement('p')
+                para.textContent = "New Paragraph created"
+                document.body.appendChild(para)
+            }
+
+            const buttons = document.querySelectorAll('button')
+            for(let button of buttons){
+                button.addEventListener('click', createParagraph)
+            }
+        })
+    </script>
+</body>
+</html>
