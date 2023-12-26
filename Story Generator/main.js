@@ -1,7 +1,7 @@
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
-
+const colorArray = ["#B4D4FF", "#E6B9DE", "#D2E3C8", "#F6ECA9", "#FFE5E5", "#DBCC95", "#DED0B6", "#FFC47E", "#9EC8B9", "#F7B787"]
 function randomValueFromArray(array){
   const random = Math.floor(Math.random()*array.length);
   return array[random];
@@ -40,4 +40,6 @@ function result() {
 
   story.textContent = newText.replaceAll(":insertx:", textX).replace(":inserty:", textY).replace(":insertz:", textZ);
   story.style.visibility = 'visible';
+  story.style.backgroundColor = randomValueFromArray(colorArray);
+
 }
