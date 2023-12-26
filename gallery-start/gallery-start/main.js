@@ -32,11 +32,19 @@ function changeImage(e){
 
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click', (e)=>{
-    if(e.target.textContent === 'Darken'){
-        overlay.style.backgroundColor = 'rgb(0 0 0 / 50%)'
-        e.target.textContent = "Lighten"
-    }else{
-        overlay.style.backgroundColor = 'rgb(0 0 0 / 0%)'
-        e.target.textContent = "Darken"
+    const currentTheme = e.target.getAttribute('class');
+    switch (currentTheme) {
+        case "light":
+            overlay.style.backgroundColor = 'rgb(0 0 0 / 50%)';
+            e.target.setAttribute('class', 'dark')
+            btn.textContent = "Lighten";
+            break;
+        case 'dark':
+            overlay.style.backgroundColor = 'rgb(0 0 0 / 0%)';
+            e.target.setAttribute('class', 'light')
+            btn.textContent = "Darken";
+        default:
+            break;
     }
+
 })
