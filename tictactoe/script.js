@@ -3,15 +3,11 @@ const winner = document.querySelector('#winner');
 const winnerCard = document.querySelector('.winner-announce');
 const resetGameBtn = document.querySelector('button');
 
-let turn = 'o';
-let countTurn = 0;
+let turn ;
+let countTurn ;
+let matrix;
 
-let matrix = [
-    ['','',''],
-    ['','',''],
-    ['','','']];
-
-document.addEventListener('DOMContentLoaded', addListeners)
+document.addEventListener('DOMContentLoaded', refresh)
 
 resetGameBtn.addEventListener('click', ()=>{
     refresh();
@@ -25,6 +21,7 @@ function addListeners(){
 }
 
 function refresh(){
+    turn = 'o'
     countTurn = 0;
     matrix = [
         ['','',''],
