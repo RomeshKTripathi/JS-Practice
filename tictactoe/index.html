@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --border-color:#ffaf1b65;
+        }
+        body{
+            background-color: #333;
+            overflow: hidden;
+        }
+       
+        .container{
+            width: 300px;
+            height: 300px;
+            margin:50px auto;
+            background-color: #222;
+            /* border:1px solid #666; */
+            box-shadow:rgba(255, 175, 26, 0.329) 0px 60px 40px -7px;
+            border-radius: 8px; 
+        }
+        #row{
+            width:100%;
+            display: flex;
+        }
+        #row .col{
+            width:100px;
+            height: 100px;
+            color:#ffaf1b;
+            cursor: pointer;
+            /* border:1px solid #666; */
+        }
+        #row:first-child, #row:nth-child(2){
+            border-bottom: 1px solid var(--border-color);
+        }
+        #row .col:nth-child(2), #row .col:nth-child(3){
+            border-left: 1px solid var(--border-color);
+        } 
+        .col span{
+            padding-left: 30px;
+            font-size: 75px;
+        }
+
+        .winner-announce{
+            width: 300px;
+            margin:50px auto;
+            background-color: #2c2c2ce3;
+            /* border:1px solid #666; */
+            border-radius: 8px; 
+            padding: 50px;
+            color:#ffaf1b;
+            font-size: 18px;
+            text-transform: capitalize;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow:rgba(255, 175, 26, 0.459) 0px 60px 40px -7px;
+            transition: 0.5s;
+            display: none;
+        }
+        .winner-announce button{
+            border:none;
+            padding:15px;
+            background-color: #ffaf1b;
+            border:2px solid #ffaf1b;
+            border-radius: 8px;
+            display: block;
+            width:180px;
+            margin:auto;
+            font-size: 18px;
+            text-transform: capitalize;
+            font-weight: 300;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .winner-announce button:hover{
+            background-color: transparent;
+            color:#ffaf1b;
+            font-weight: 400;
+            transition: 0.2s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="icon-x"></div>
+    <div class="container">
+        <div id="row">
+            <div class="col" id="00"></div>
+            <div class="col" id="01"></div>
+            <div class="col" id="02"></div>
+        </div>
+        <div id="row">
+            <div class="col" id="10"></div>
+            <div class="col" id="11"></div>
+            <div class="col" id="12"></div>
+        </div>
+        <div id="row">
+            <div class="col" id="20"></div>
+            <div class="col" id="21"></div>
+            <div class="col" id="22"></div>
+        </div>
+    </div>
+    <div class="winner-announce">
+        <p><span id="winner"></span></p>
+        <button>Restart game</button>
+        
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
